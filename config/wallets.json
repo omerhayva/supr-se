@@ -1,0 +1,43 @@
+{
+  "demoMode": false,
+  "defaultCurrency": "USDT_TRC20",
+  "presets": [5, 10, 25, 50, 100],
+  "wallets": {
+    "USDT_TRC20": {
+      "enabled": true,
+      "symbol": "USDT",
+      "network": "TRC20",
+      "address": "TCmHVxj3nyNEZXTitVKxPadxNqsHPx1bX6"
+    },
+    "USDT_BEP20": {
+      "enabled": true,
+      "symbol": "USDT",
+      "network": "BEP20",
+      "address": "0x867fb34e7CD7DdEF0033BC4a8460085897B3FDA8"
+    },
+    "USDT_ERC20": {
+      "enabled": true,
+      "symbol": "USDT",
+      "network": "ERC20",
+      "address": "0x867fb34e7CD7DdEF0033BC4a8460085897B3FDA8"
+    },
+    "BTC": {
+      "enabled": true,
+      "symbol": "BTC",
+      "network": "BTC",
+      "address": "bc1qej8ge6caw8dzahvwxktgqdtnm86x87s8jafc3h"
+    },
+    "ETH": {
+      "enabled": true,
+      "symbol": "ETH",
+      "network": "ERC20",
+      "address": "0x867fb34e7CD7DdEF0033BC4a8460085897B3FDA8"
+    },
+    "SOL": {
+      "enabled": true,
+      "symbol": "SOL",
+      "network": "SOL",
+      "address": "817Eyu65ycfVSobGhnFkyJZmZgazS9phazkxzjRsyaUx"
+    }
+  }
+}

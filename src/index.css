@@ -1,0 +1,176 @@
+:root {
+  --void-bg: #040406;
+  --obsidian-top: #18171d;
+  --obsidian-mid: #0c0c10;
+  --obsidian-deep: #060609;
+  --gold-bright: #f5e4bc;
+  --gold-primary: #dfc088;
+  --gold-muted: #a6864f;
+  --gold-dark: #5e4621;
+  --vellum-top: #f7f1e6;
+  --vellum-mid: #eee4d2;
+  --vellum-edge: #dfd1b8;
+  --ink-primary: #1a1612;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100dvh;
+  background-color: var(--void-bg);
+  color: #f3ece0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(223, 192, 136, 0.32);
+  color: inherit;
+}
+
+/* Remove number input arrows */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Subtle architectural grain overlay */
+.sanctuary-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.032;
+  background-image: radial-gradient(rgba(255, 245, 225, 0.5) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Blinking fountain nib cursor when empty & unfocused */
+@keyframes caretPulse {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.15;
+    transform: scaleY(0.92);
+  }
+}
+
+.idle-caret {
+  animation: caretPulse 1.35s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-140%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(260%) skewX(-18deg);
+  }
+}
+
+/* Architectural Brushed Gold Primary Bar Button */
+.luxury-action-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f3dfb5 0%, #d8b577 48%, #b9914c 100%);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.78),
+    0 0 28px rgba(223, 192, 136, 0.16),
+    inset 0 1px 0 rgba(255, 252, 244, 0.72),
+    inset 0 -1px 2px rgba(74, 50, 16, 0.55);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease, filter 0.22s ease;
+}
+
+.luxury-action-btn:hover {
+  transform: translateY(-1.5px);
+  filter: brightness(1.04);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.85),
+    0 0 38px rgba(223, 192, 136, 0.3),
+    inset 0 1px 0 rgba(255, 252, 244, 0.88),
+    inset 0 -1px 2px rgba(74, 50, 16, 0.55);
+}
+
+.luxury-action-btn:active {
+  transform: translateY(0.5px) scale(0.99);
+}
+
+.luxury-action-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 252, 242, 0.42) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-140%) skewX(-18deg);
+}
+
+.luxury-action-btn:hover::after {
+  animation: shimmerSweep 0.9s ease forwards;
+}
+
+/* Seal medallion inside envelope */
+.seal-medallion {
+  background: radial-gradient(circle at 32% 25%, #f8e8c4 0%, #d9b679 46%, #8f6b34 88%, #5e441c 100%);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.72),
+    0 0 26px rgba(223, 192, 136, 0.24),
+    inset 0 1px 1.5px rgba(255, 250, 238, 0.75);
+}
+
+/* Custom scrollbar inside textarea */
+.wish-textarea::-webkit-scrollbar {
+  width: 4px;
+}
+.wish-textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+.wish-textarea::-webkit-scrollbar-thumb {
+  background: rgba(140, 108, 58, 0.28);
+  border-radius: 999px;
+}
+
+/* QR SVG full responsive styling */
+.qr-container svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes radarPing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+
+.radar-ring {
+  animation: radarPing 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
